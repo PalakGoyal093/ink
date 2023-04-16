@@ -1,0 +1,54 @@
+<div class="tab-content tab-faq-section-content" data-content="{{ section.settings.title }}">
+  <ul class="tabs_pop">
+    {% for block in section.blocks %}
+      <li>
+        <div class="h4">{{ block.settings.heading }}</div>
+        <div>
+          {{ block.settings.richtext }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Faq",
+  "settings": [
+       {
+    "type": "text",
+    "id": "title",
+    "label": "Tab Heading"
+  }
+  ],
+  "blocks":[
+    {
+      "name":"Accordion",
+      "type":"accordion",
+      "settings":[
+             {
+    "type": "text",
+    "id": "heading",
+    "label": "Tab Heading"
+  },
+              {
+    "type": "richtext",
+    "id": "richtext",
+    "label": "Description"
+  }
+      ]
+    }
+  ],
+    "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
